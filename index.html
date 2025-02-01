@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,6 +20,15 @@
             background-size: cover;
             height: 150px;
             display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h2 {
+            margin: 2px;
+            min-height: 50px;
+            display: flex;
+            text-align: center;
             align-items: center;
             justify-content: center;
         }
@@ -59,24 +69,23 @@
         .cuadro {
             background-color: #1e2b38;
             color: rgb(218, 211, 211);
-            margin: 10px;
+            margin: 4px;
             padding: 0;
             display: inline-block;
-            width: 45%;
+            width: 44%;
             cursor: pointer;
             text-align: center;
             border-radius: 8px;
             vertical-align: top;
             position: relative;
-            min-height: 200px;
+            min-height: 280px;
             overflow: hidden;
         }
 
         .cuadro img {
             width: 80%;
-            height: 80%;
             object-fit: cover;
-            display: block;
+            display: flex;
             margin-left: auto;
             margin-right: auto;
         }
@@ -99,12 +108,13 @@
             background-color: white;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             z-index: 5;
             width: 300px;
         }
 
-        .formulario input, .formulario textarea {
+        .formulario input,
+        .formulario textarea {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -133,6 +143,7 @@
             width: 50px;
             height: 50px;
             transition: top 0.3s ease-out;
+            z-index: 1000;
         }
 
         .whatsapp-logo:hover {
@@ -152,13 +163,13 @@
         }
 
         .social-icons a:hover {
-            color: #00acee; 
+            color: #00acee;
         }
     </style>
     <script>
         function toggleContenido(id) {
             var contenidos = document.querySelectorAll('.contenido');
-            contenidos.forEach(function(contenido) {
+            contenidos.forEach(function (contenido) {
                 if (contenido.id !== id) {
                     contenido.style.display = "none";
                 }
@@ -172,16 +183,16 @@
             }
         }
 
-        
+
         function mostrarFormulario() {
-       var formulario = document.getElementById('formulario');
-    
-      if (formulario.style.display === 'block') {
-        formulario.style.display = 'none'; // Cerrar el formulario
-      } else {
-        formulario.style.display = 'block'; // Mostrar el formulario
-      }
-      }
+            var formulario = document.getElementById('formulario');
+
+            if (formulario.style.display === 'block') {
+                formulario.style.display = 'none'; // Cerrar el formulario
+            } else {
+                formulario.style.display = 'block'; // Mostrar el formulario
+            }
+        }
 
 
         // Enviar formulario a WhatsApp
@@ -193,7 +204,7 @@
             var comentario = document.getElementById('comentario').value;
 
             if (nombre && apellido && correo && telefono) {
-                var mensaje = `*Nombre:* ${nombre} %0A*Apellido:* ${apellido} %0A*Correo:* ${correo} %0A*Número de teléfono:* ${telefono} %0A*Comentario:* ${comentario}`;
+                var mensaje = `Hola, me gustaría tener mas información de la fundación y su beneficios%0A**Nombre:* ${nombre} %0A*Apellido:* ${apellido} %0A*Correo:* ${correo} %0A*Número de teléfono:* ${telefono} %0A*Comentario:* ${comentario}`;
 
                 var numeroWhatsApp = '+573158857224';
                 var enlaceWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
@@ -206,7 +217,7 @@
         }
 
         // Función para mover el logo de WhatsApp
-        window.onscroll = function() {
+        window.onscroll = function () {
             var logo = document.querySelector('.whatsapp-logo');
             var scrollPosition = window.scrollY;
 
@@ -215,11 +226,14 @@
         };
     </script>
 </head>
+
 <body>
-    <header style="background-image: url('img.jpg'); background-size: cover; background-position: center; height: 150px; display: flex; align-items: center; justify-content: center;">
+    <header
+        style="background-image: url('img.jpg'); background-size: cover; background-position: center; height: 150px; display: flex; align-items: center; justify-content: center;">
         <h1 style="color: white; font-size: 3rem;">Fundación Justicia Laboral</h1>
         <!-- Logo de WhatsApp -->
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-logo" onclick="mostrarFormulario()">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-logo"
+            onclick="mostrarFormulario()">
     </header>
 
     <nav>
@@ -232,209 +246,320 @@
 
     <section id="quienes">
         <h2>Quiénes Somos</h2>
-        <p>En la Fundación Justicia Laboral, nos dedicamos a defender y promover los derechos de los trabajadores en Colombia. Nuestra misión es proporcionar asesoría y representación jurídica de alta calidad a aquellos que enfrentan injusticias laborales, garantizando que sus derechos sean respetados y protegidos.</p>
-        
+        <p>En la Fundación Justicia Laboral, nos dedicamos a defender y promover los derechos de los trabajadores en
+            Colombia. Nuestra misión es proporcionar asesoría y representación jurídica de alta calidad a aquellos que
+            enfrentan injusticias laborales, garantizando que sus derechos sean respetados y protegidos.</p>
+
         <div style="width: 100%; display: flex; align-items: center; justify-content: center;">
-        <img src="somos.jpg" alt="Descripción de la imagen" width="300" style="display: block; margin: 0 auto;">
+            <img src="somos.jpg" alt="Descripción de la imagen" width="300" style="display: block; margin: 0 auto;">
         </div>
 
         <h3>Nuestro Compromiso</h3>
-        <p>Creemos firmemente en la dignidad del trabajo y en la importancia de un entorno laboral seguro y respetuoso. Por ello, nos comprometemos a luchar incansablemente por la justicia laboral, ofreciendo un apoyo integral que abarca desde la asesoría legal hasta la representación en tribunales. Nuestro equipo de abogados especializados y comprometidos trabaja con pasión y dedicación para asegurar que cada trabajador reciba el trato justo que merece.</p>
-        
+        <p>Creemos firmemente en la dignidad del trabajo y en la importancia de un entorno laboral seguro y respetuoso.
+            Por ello, nos comprometemos a luchar incansablemente por la justicia laboral, ofreciendo un apoyo integral
+            que abarca desde la asesoría legal hasta la representación en tribunales. Nuestro equipo de abogados
+            especializados y comprometidos trabaja con pasión y dedicación para asegurar que cada trabajador reciba el
+            trato justo que merece.</p>
+
         <div style="width: 100%; display: flex; align-items: center; justify-content: center;">
-            <img src="compromiso.jpg" alt="Descripción de la imagen" width="300" style="display: block; margin: 0 auto;">
-            </div>
+            <img src="compromiso.jpg" alt="Descripción de la imagen" width="300"
+                style="display: block; margin: 0 auto;">
+        </div>
 
         <h3 style="text-align: center;">Nuestra Visión</h3>
-        <p>Nuestra visión es construir una sociedad donde cada trabajador tenga acceso a la justicia y pueda ejercer sus derechos sin temor a represalias. Aspiramos a ser un referente en la defensa de los derechos laborales, promoviendo un cambio positivo en las políticas y prácticas laborales en Colombia. A través de nuestra labor, buscamos no solo resolver conflictos individuales, sino también influir en la creación de un entorno laboral más justo y equitativo para todos.</p>
-            <div style="width: 100%; display: flex; align-items: center; justify-content: center;">
+        <p>Nuestra visión es construir una sociedad donde cada trabajador tenga acceso a la justicia y pueda ejercer sus
+            derechos sin temor a represalias. Aspiramos a ser un referente en la defensa de los derechos laborales,
+            promoviendo un cambio positivo en las políticas y prácticas laborales en Colombia. A través de nuestra
+            labor, buscamos no solo resolver conflictos individuales, sino también influir en la creación de un entorno
+            laboral más justo y equitativo para todos.</p>
+        <div style="width: 100%; display: flex; align-items: center; justify-content: center;">
             <img src="vision.jpg" alt="Descripción de la imagen" width="300" style="display: block; margin: 0 auto;">
-            </div>
+        </div>
         <h3>Nuestros Valores</h3>
         <ul>
-            <li><b>Justicia:</b> Nos guiamos por el principio de justicia, asegurando que cada acción que tomamos esté orientada a lograr un trato equitativo para todos los trabajadores.</li>
-            <li><b>Compromiso:</b> Estamos dedicados a nuestra misión y trabajamos con perseverancia para alcanzar nuestros objetivos.</li>
-            <li><b>Transparencia:</b> Actuamos con honestidad y claridad en todas nuestras interacciones, manteniendo siempre la confianza de quienes nos buscan.</li>
-            <li><b>Empatía:</b> Entendemos y valoramos las experiencias y desafíos de los trabajadores, ofreciendo un apoyo comprensivo y humano.</li>
+            <li><b>Justicia:</b> Nos guiamos por el principio de justicia, asegurando que cada acción que tomamos esté
+                orientada a lograr un trato equitativo para todos los trabajadores.</li>
+            <li><b>Compromiso:</b> Estamos dedicados a nuestra misión y trabajamos con perseverancia para alcanzar
+                nuestros objetivos.</li>
+            <li><b>Transparencia:</b> Actuamos con honestidad y claridad en todas nuestras interacciones, manteniendo
+                siempre la confianza de quienes nos buscan.</li>
+            <li><b>Empatía:</b> Entendemos y valoramos las experiencias y desafíos de los trabajadores, ofreciendo un
+                apoyo comprensivo y humano.</li>
         </ul>
     </section>
 
     <section id="derechos">
         <div class="cuadro" onclick="toggleContenido('contenidoDerechos')">
             <h2>Derechos Laborales Vulnerados</h2>
-            <img src="derechos.jpg" alt="Descripción de la imagen" class="imagen-cuadro">
+            <div style="min-height: 215px ; display: flex; align-items: center; justify-content: center;">
+                <img src="derechos.jpg" alt="Descripción de la imagen">
+            </div>
         </div>
         <div class="cuadro" onclick="toggleContenido('contenidoSeguridad')">
             <h2>Sistema General de Seguridad Social en Salud</h2>
-            <img src="social.jpg" alt="Descripción de la imagen" class="imagen-cuadro">
+            <div style="min-height: 215px ; display: flex; align-items: center; justify-content: center;">
+                <img src="social.jpg" alt="Descripción de la imagen">
+            </div>
         </div>
         <div id="contenidoDerechos" class="contenido">
             <ul>
+                <h1><strong>Derechos Laborales Vulnerados</strong></h1>
+
                 <li><strong>Pago de Salarios</strong>
-                  <ul>
-                    <li>Retrasos en el pago de salarios: Muchos trabajadores enfrentan demoras en la recepción de sus salarios, lo que afecta su estabilidad económica y bienestar.</li>
-                    <li>No pago de horas extras y recargos nocturnos: Es común que los empleadores no reconozcan ni paguen las horas extras trabajadas, así como los recargos por trabajo nocturno, lo cual es una violación directa de los derechos laborales.</li>
-                  </ul>
+                    <ul>
+                        <li>Retrasos en el pago de salarios: Muchos trabajadores enfrentan demoras en la recepción de
+                            sus salarios, lo que afecta su estabilidad económica y bienestar.</li>
+                        <li>No pago de horas extras y recargos nocturnos: Es común que los empleadores no reconozcan ni
+                            paguen las horas extras trabajadas, así como los recargos por trabajo nocturno, lo cual es
+                            una violación directa de los derechos laborales.</li>
+                    </ul>
                 </li>
-                
+
                 <li><strong>Condiciones de Trabajo</strong>
-                  <ul>
-                    <li>Exceso de horas laborales sin compensación adecuada: Los trabajadores a menudo se ven obligados a trabajar más allá de la jornada laboral establecida sin recibir la compensación correspondiente.</li>
-                    <li>Falta de condiciones de seguridad y salud en el trabajo: Muchos lugares de trabajo no cumplen con las normas básicas de seguridad y salud, exponiendo a los trabajadores a riesgos innecesarios y peligrosos.</li>
-                  </ul>
+                    <ul>
+                        <li>Exceso de horas laborales sin compensación adecuada: Los trabajadores a menudo se ven
+                            obligados a trabajar más allá de la jornada laboral establecida sin recibir la compensación
+                            correspondiente.</li>
+                        <li>Falta de condiciones de seguridad y salud en el trabajo: Muchos lugares de trabajo no
+                            cumplen con las normas básicas de seguridad y salud, exponiendo a los trabajadores a riesgos
+                            innecesarios y peligrosos.</li>
+                    </ul>
                 </li>
-                
+
                 <li><strong>Contratación y Despido</strong>
-                  <ul>
-                    <li>Uso indebido de contratos temporales o por prestación de servicios: Algunos empleadores utilizan contratos temporales o por prestación de servicios para evitar responsabilidades laborales y prestaciones sociales.</li>
-                    <li>Despidos injustificados y sin indemnización: Es frecuente que los trabajadores sean despedidos sin una causa justificada y sin recibir la indemnización que les corresponde por ley.</li>
-                  </ul>
+                    <ul>
+                        <li>Uso indebido de contratos temporales o por prestación de servicios: Algunos empleadores
+                            utilizan contratos temporales o por prestación de servicios para evitar responsabilidades
+                            laborales y prestaciones sociales.</li>
+                        <li>Despidos injustificados y sin indemnización: Es frecuente que los trabajadores sean
+                            despedidos sin una causa justificada y sin recibir la indemnización que les corresponde por
+                            ley.</li>
+                    </ul>
                 </li>
-                
+
                 <li><strong>Prestaciones Sociales</strong>
-                  <ul>
-                    <li>No pago de prestaciones como cesantías, primas y vacaciones: Muchos empleadores no cumplen con el pago de las prestaciones sociales obligatorias, afectando el bienestar y la seguridad económica de los trabajadores.</li>
-                    <li>Falta de afiliación a la seguridad social: Algunos trabajadores no son afiliados a los sistemas de seguridad social, lo que les priva de beneficios esenciales como salud, pensiones y protección contra riesgos laborales.</li>
-                  </ul>
+                    <ul>
+                        <li>No pago de prestaciones como cesantías, primas y vacaciones: Muchos empleadores no cumplen
+                            con el pago de las prestaciones sociales obligatorias, afectando el bienestar y la seguridad
+                            económica de los trabajadores.</li>
+                        <li>Falta de afiliación a la seguridad social: Algunos trabajadores no son afiliados a los
+                            sistemas de seguridad social, lo que les priva de beneficios esenciales como salud,
+                            pensiones y protección contra riesgos laborales.</li>
+                    </ul>
                 </li>
-                
+
                 <li><strong>Discriminación y Acoso</strong>
-                  <ul>
-                    <li>Discriminación por género, raza, religión, orientación sexual, entre otros: La discriminación en el lugar de trabajo sigue siendo un problema significativo, afectando la igualdad de oportunidades y el trato justo.</li>
-                    <li>Casos de acoso laboral y sexual: El acoso laboral y sexual es una realidad para muchos trabajadores, creando un ambiente de trabajo hostil y perjudicial para su bienestar emocional y profesional.</li>
-                  </ul>
+                    <ul>
+                        <li>Discriminación por género, raza, religión, orientación sexual, entre otros: La
+                            discriminación en el lugar de trabajo sigue siendo un problema significativo, afectando la
+                            igualdad de oportunidades y el trato justo.</li>
+                        <li>Casos de acoso laboral y sexual: El acoso laboral y sexual es una realidad para muchos
+                            trabajadores, creando un ambiente de trabajo hostil y perjudicial para su bienestar
+                            emocional y profesional.</li>
+                    </ul>
                 </li>
-              </ul>
-              
-              
+            </ul>
+
+
         </div>
 
         <div id="contenidoSeguridad" class="contenido">
             <ul>
+                <h1><strong>Sistema de Seguridad Social en Colombia</strong></h1>
+
                 <li><strong>Sistema General de Seguridad Social en Salud</strong>
-                  <ul>
-                    <li>Derecho a la Atención Médica: Todos los afiliados tienen derecho a recibir atención médica integral, incluyendo consultas, tratamientos y hospitalización.</li>
-                    <li>Derecho a Medicamentos: Los afiliados tienen derecho a recibir los medicamentos necesarios para su tratamiento, según el Plan Obligatorio de Salud (POS).</li>
-                    <li>Derecho a la Atención Preventiva: Incluye vacunación, programas de promoción de la salud y prevención de enfermedades.</li>
-                  </ul>
+                    <ul>
+                        <li>Derecho a la Atención Médica: Todos los afiliados tienen derecho a recibir atención médica
+                            integral, incluyendo consultas, tratamientos y hospitalización.</li>
+                        <li>Derecho a Medicamentos: Los afiliados tienen derecho a recibir los medicamentos necesarios
+                            para su tratamiento, según el Plan Obligatorio de Salud (POS).</li>
+                        <li>Derecho a la Atención Preventiva: Incluye vacunación, programas de promoción de la salud y
+                            prevención de enfermedades.</li>
+                    </ul>
                 </li>
-                
+
                 <li><strong>Sistema de Subsidio Familiar</strong>
-                  <ul>
-                    <li>Derecho a Subsidios Económicos: Los trabajadores tienen derecho a recibir subsidios económicos por hijos a cargo, vivienda, educación y otros.</li>
-                    <li>Derecho a Servicios Sociales: Incluye acceso a servicios de recreación, cultura y capacitación.</li>
-                  </ul>
+                    <ul>
+                        <li>Derecho a Subsidios Económicos: Los trabajadores tienen derecho a recibir subsidios
+                            económicos por hijos a cargo, vivienda, educación y otros.</li>
+                        <li>Derecho a Servicios Sociales: Incluye acceso a servicios de recreación, cultura y
+                            capacitación.</li>
+                    </ul>
                 </li>
-                
+
                 <li><strong>Sistema de Servicios Sociales Complementarios</strong>
-                  <ul>
-                    <li>Derecho a Programas de Bienestar: Los afiliados tienen derecho a participar en programas de bienestar social, como actividades recreativas y culturales.</li>
-                    <li>Derecho a Capacitación y Formación: Los trabajadores tienen derecho a acceder a programas de capacitación y formación profesional.</li>
-                  </ul>
+                    <ul>
+                        <li>Derecho a Programas de Bienestar: Los afiliados tienen derecho a participar en programas de
+                            bienestar social, como actividades recreativas y culturales.</li>
+                        <li>Derecho a Capacitación y Formación: Los trabajadores tienen derecho a acceder a programas de
+                            capacitación y formación profesional.</li>
+                    </ul>
                 </li>
-              </ul>
-              
+            </ul>
+
         </div>
     </section>
 
     <section id="pensiones">
         <div class="cuadro" onclick="toggleContenido('contenidoPensiones')">
+            <h1><strong>Sistema de Pensiones en Colombia</strong></h1>
             <h2>Sistema de Pensiones en Colombia</h2>
-            <img src="pension.jpg" alt="Descripción de la imagen" class="imagen-cuadro">
+            <div style="min-height: 215px ; display: flex; align-items: center; justify-content: center;">
+                <img src="pension.jpg" alt="Descripción de la imagen">
+            </div>
         </div>
         <div class="cuadro" onclick="toggleContenido('contenidoRiesgos')">
             <h2>Sistema de Riesgos Laborales en Colombia</h2>
-            <img src="laborales.jpg" alt="Descripción de la imagen" class="imagen-cuadro">
+            <div style="min-height: 215px ; display: flex; align-items: center; justify-content: center;">
+                <img src="laborales.jpg" alt="Descripción de la imagen">
+            </div>
         </div>
         <div id="contenidoPensiones" class="contenido">
             <ul>
                 <li><strong>Régimen de Prima Media (RPM)</strong>
-                  <ul>
-                    <li>Administrado por Colpensiones: Este es el régimen público de pensiones en Colombia. Los trabajadores y empleadores realizan aportes a un fondo común administrado por Colpensiones.</li>
-                    <li>Requisitos para la Pensión de Vejez: Los trabajadores deben cumplir con una edad mínima de 62 años para hombres y 57 años para mujeres, además de haber cotizado un mínimo de 1,300 semanas. Este requisito asegura que los trabajadores hayan contribuido al sistema durante un período significativo antes de recibir beneficios.</li>
-                    <li>Beneficios: Los afiliados tienen derecho a una pensión de vejez al cumplir con los requisitos de edad y semanas cotizadas. Además, el régimen ofrece pensiones de invalidez para aquellos que pierdan su capacidad laboral y pensiones de sobrevivientes para los beneficiarios de un afiliado fallecido.</li>
-                  </ul>
+                    <ul>
+                        <li>Administrado por Colpensiones: Este es el régimen público de pensiones en Colombia. Los
+                            trabajadores y empleadores realizan aportes a un fondo común administrado por Colpensiones.
+                        </li>
+                        <li>Requisitos para la Pensión de Vejez: Los trabajadores deben cumplir con una edad mínima de
+                            62 años para hombres y 57 años para mujeres, además de haber cotizado un mínimo de 1,300
+                            semanas. Este requisito asegura que los trabajadores hayan contribuido al sistema durante un
+                            período significativo antes de recibir beneficios.</li>
+                        <li>Beneficios: Los afiliados tienen derecho a una pensión de vejez al cumplir con los
+                            requisitos de edad y semanas cotizadas. Además, el régimen ofrece pensiones de invalidez
+                            para aquellos que pierdan su capacidad laboral y pensiones de sobrevivientes para los
+                            beneficiarios de un afiliado fallecido.</li>
+                    </ul>
                 </li>
-                
+
                 <li><strong>Régimen de Ahorro Individual con Solidaridad (RAIS)</strong>
-                  <ul>
-                    <li>Administrado por Fondos Privados de Pensiones: En este régimen, cada trabajador tiene una cuenta individual donde se depositan sus aportes y los de su empleador. Los fondos son administrados por entidades privadas.</li>
-                    <li>Requisitos para la Pensión de Vejez: Los trabajadores deben cumplir con una edad mínima de 62 años para hombres y 57 años para mujeres, y deben tener un capital suficiente en su cuenta individual para financiar su pensión. Este sistema permite que los trabajadores tengan un control más directo sobre sus ahorros para la jubilación.</li>
-                    <li>Beneficios: Los afiliados tienen derecho a una pensión de vejez basada en el capital acumulado en su cuenta individual. También se ofrecen pensiones de invalidez y de sobrevivientes, similares al régimen de prima media.</li>
-                  </ul>
+                    <ul>
+                        <li>Administrado por Fondos Privados de Pensiones: En este régimen, cada trabajador tiene una
+                            cuenta individual donde se depositan sus aportes y los de su empleador. Los fondos son
+                            administrados por entidades privadas.</li>
+                        <li>Requisitos para la Pensión de Vejez: Los trabajadores deben cumplir con una edad mínima de
+                            62 años para hombres y 57 años para mujeres, y deben tener un capital suficiente en su
+                            cuenta individual para financiar su pensión. Este sistema permite que los trabajadores
+                            tengan un control más directo sobre sus ahorros para la jubilación.</li>
+                        <li>Beneficios: Los afiliados tienen derecho a una pensión de vejez basada en el capital
+                            acumulado en su cuenta individual. También se ofrecen pensiones de invalidez y de
+                            sobrevivientes, similares al régimen de prima media.</li>
+                    </ul>
                 </li>
-                
+
                 <li><strong>Pensión de Invalidez</strong>
-                  <ul>
-                    <li>Requisitos: Los trabajadores que sufran una pérdida de capacidad laboral igual o superior al 50% tienen derecho a una pensión de invalidez. Deben haber cotizado al menos 50 semanas en los últimos 3 años.</li>
-                    <li>Beneficios: La pensión de invalidez proporciona un ingreso mensual proporcional al grado de invalidez del trabajador, asegurando su sustento económico en caso de incapacidad para trabajar.</li>
-                  </ul>
+                    <ul>
+                        <li>Requisitos: Los trabajadores que sufran una pérdida de capacidad laboral igual o superior al
+                            50% tienen derecho a una pensión de invalidez. Deben haber cotizado al menos 50 semanas en
+                            los últimos 3 años.</li>
+                        <li>Beneficios: La pensión de invalidez proporciona un ingreso mensual proporcional al grado de
+                            invalidez del trabajador, asegurando su sustento económico en caso de incapacidad para
+                            trabajar.</li>
+                    </ul>
                 </li>
-                
+
                 <li><strong>Pensión de Sobrevivientes</strong>
-                  <ul>
-                    <li>Requisitos: Los beneficiarios de un afiliado fallecido tienen derecho a una pensión de sobrevivientes si el afiliado cumplió con al menos 50 semanas cotizadas en los últimos 3 años.</li>
-                    <li>Beneficiarios: Los beneficiarios pueden incluir al cónyuge, hijos menores de 18 años (o hasta 25 años si estudian) y padres dependientes económicamente.</li>
-                    <li>Beneficios: La pensión de sobrevivientes proporciona un ingreso mensual a los beneficiarios, asegurando su bienestar económico tras la pérdida del afiliado.</li>
-                  </ul>
+                    <ul>
+                        <li>Requisitos: Los beneficiarios de un afiliado fallecido tienen derecho a una pensión de
+                            sobrevivientes si el afiliado cumplió con al menos 50 semanas cotizadas en los últimos 3
+                            años.</li>
+                        <li>Beneficiarios: Los beneficiarios pueden incluir al cónyuge, hijos menores de 18 años (o
+                            hasta 25 años si estudian) y padres dependientes económicamente.</li>
+                        <li>Beneficios: La pensión de sobrevivientes proporciona un ingreso mensual a los beneficiarios,
+                            asegurando su bienestar económico tras la pérdida del afiliado.</li>
+                    </ul>
                 </li>
-                
+
                 <li><strong>Indemnización Sustitutiva</strong>
-                  <ul>
-                    <li>Requisitos: Los trabajadores que no cumplan con los requisitos para obtener una pensión tienen derecho a una indemnización sustitutiva.</li>
-                    <li>Beneficios: La indemnización sustitutiva consiste en la devolución de los aportes realizados al sistema, proporcionando un alivio económico a aquellos que no alcanzan a pensionarse.</li>
-                  </ul>
+                    <ul>
+                        <li>Requisitos: Los trabajadores que no cumplan con los requisitos para obtener una pensión
+                            tienen derecho a una indemnización sustitutiva.</li>
+                        <li>Beneficios: La indemnización sustitutiva consiste en la devolución de los aportes realizados
+                            al sistema, proporcionando un alivio económico a aquellos que no alcanzan a pensionarse.
+                        </li>
+                    </ul>
                 </li>
-                
+
                 <li><strong>Beneficios Económicos Periódicos (BEPS)</strong>
-                  <ul>
-                    <li>Requisitos: Este programa está dirigido a personas que no alcanzan a cumplir los requisitos para una pensión.</li>
-                    <li>Beneficios: Los BEPS permiten a los trabajadores realizar ahorros voluntarios con un subsidio del Estado, proporcionando un ingreso periódico en la vejez y mejorando su calidad de vida.</li>
-                  </ul>
+                    <ul>
+                        <li>Requisitos: Este programa está dirigido a personas que no alcanzan a cumplir los requisitos
+                            para una pensión.</li>
+                        <li>Beneficios: Los BEPS permiten a los trabajadores realizar ahorros voluntarios con un
+                            subsidio del Estado, proporcionando un ingreso periódico en la vejez y mejorando su calidad
+                            de vida.</li>
+                    </ul>
                 </li>
-              </ul>
-              
+            </ul>
+
         </div>
 
         <div id="contenidoRiesgos" class="contenido">
             <ul>
+                <h1><strong>Sistema General de Riesgos Laborales en Colombia</strong></h1>
                 <li><strong>Prevención de Riesgos Laborales</strong>
-                  <ul>
-                    <li>Identificación de Peligros: Es fundamental evaluar y reconocer los riesgos presentes en el lugar de trabajo para implementar medidas preventivas adecuadas. Esto incluye la identificación de factores que puedan causar accidentes o enfermedades laborales.</li>
-                    <li>Medidas Preventivas: Una vez identificados los peligros, se deben implementar acciones para eliminarlos o minimizarlos. Esto puede incluir la mejora de las condiciones de trabajo, el uso de equipos de protección personal y la adopción de prácticas seguras.</li>
-                    <li>Capacitación y Formación: La educación y formación continua de los trabajadores en temas de seguridad y salud en el trabajo es esencial para prevenir accidentes y enfermedades. Los programas de capacitación deben ser actualizados y adaptados a las necesidades específicas de cada lugar de trabajo.</li>
-                  </ul>
+                    <ul>
+                        <li>Identificación de Peligros: Es fundamental evaluar y reconocer los riesgos presentes en el
+                            lugar de trabajo para implementar medidas preventivas adecuadas. Esto incluye la
+                            identificación de factores que puedan causar accidentes o enfermedades laborales.</li>
+                        <li>Medidas Preventivas: Una vez identificados los peligros, se deben implementar acciones para
+                            eliminarlos o minimizarlos. Esto puede incluir la mejora de las condiciones de trabajo, el
+                            uso de equipos de protección personal y la adopción de prácticas seguras.</li>
+                        <li>Capacitación y Formación: La educación y formación continua de los trabajadores en temas de
+                            seguridad y salud en el trabajo es esencial para prevenir accidentes y enfermedades. Los
+                            programas de capacitación deben ser actualizados y adaptados a las necesidades específicas
+                            de cada lugar de trabajo.</li>
+                    </ul>
                 </li>
-                
+
                 <li><strong>Afiliación y Cotización</strong>
-                  <ul>
-                    <li>Afiliación Obligatoria: Todos los empleadores están obligados a afiliar a sus trabajadores al Sistema General de Riesgos Laborales. Esto garantiza que los trabajadores estén protegidos en caso de accidentes o enfermedades laborales.</li>
-                    <li>Cotización: Los empleadores deben realizar aportes mensuales al sistema, basados en el salario de los trabajadores y el nivel de riesgo de la actividad económica. Estos aportes financian las prestaciones y servicios del sistema, asegurando su sostenibilidad.</li>
-                  </ul>
+                    <ul>
+                        <li>Afiliación Obligatoria: Todos los empleadores están obligados a afiliar a sus trabajadores
+                            al Sistema General de Riesgos Laborales. Esto garantiza que los trabajadores estén
+                            protegidos en caso de accidentes o enfermedades laborales.</li>
+                        <li>Cotización: Los empleadores deben realizar aportes mensuales al sistema, basados en el
+                            salario de los trabajadores y el nivel de riesgo de la actividad económica. Estos aportes
+                            financian las prestaciones y servicios del sistema, asegurando su sostenibilidad.</li>
+                    </ul>
                 </li>
-                
+
                 <li><strong>Atención en Caso de Accidente o Enfermedad Laboral</strong>
-                  <ul>
-                    <li>Atención Médica Inmediata: En caso de accidente o enfermedad laboral, los trabajadores tienen derecho a recibir atención médica inmediata y de calidad. Esto incluye tratamientos, hospitalización y rehabilitación.</li>
-                    <li>Prestaciones Económicas: Los trabajadores afectados tienen derecho a recibir subsidios por incapacidad temporal, indemnizaciones por incapacidad permanente y pensiones por invalidez o sobrevivencia. Estas prestaciones aseguran el sustento económico del trabajador y su familia durante el período de recuperación o en caso de incapacidad permanente.</li>
-                  </ul>
+                    <ul>
+                        <li>Atención Médica Inmediata: En caso de accidente o enfermedad laboral, los trabajadores
+                            tienen derecho a recibir atención médica inmediata y de calidad. Esto incluye tratamientos,
+                            hospitalización y rehabilitación.</li>
+                        <li>Prestaciones Económicas: Los trabajadores afectados tienen derecho a recibir subsidios por
+                            incapacidad temporal, indemnizaciones por incapacidad permanente y pensiones por invalidez o
+                            sobrevivencia. Estas prestaciones aseguran el sustento económico del trabajador y su familia
+                            durante el período de recuperación o en caso de incapacidad permanente.</li>
+                    </ul>
                 </li>
-                
+
                 <li><strong>Rehabilitación y Reincorporación</strong>
-                  <ul>
-                    <li>Rehabilitación Integral: Los programas de rehabilitación deben ser integrales y personalizados, abarcando tanto la recuperación física como psicológica del trabajador. Esto facilita su reintegración al trabajo y mejora su calidad de vida.</li>
-                    <li>Reincorporación Laboral: Es importante implementar estrategias para facilitar la reincorporación de los trabajadores a sus puestos de trabajo o a nuevas funciones, adaptadas a sus capacidades y limitaciones. Esto incluye la adaptación del puesto de trabajo y el apoyo continuo durante el proceso de reintegración.</li>
-                  </ul>
+                    <ul>
+                        <li>Rehabilitación Integral: Los programas de rehabilitación deben ser integrales y
+                            personalizados, abarcando tanto la recuperación física como psicológica del trabajador. Esto
+                            facilita su reintegración al trabajo y mejora su calidad de vida.</li>
+                        <li>Reincorporación Laboral: Es importante implementar estrategias para facilitar la
+                            reincorporación de los trabajadores a sus puestos de trabajo o a nuevas funciones, adaptadas
+                            a sus capacidades y limitaciones. Esto incluye la adaptación del puesto de trabajo y el
+                            apoyo continuo durante el proceso de reintegración.</li>
+                    </ul>
                 </li>
-                
+
                 <li><strong>Vigilancia y Control</strong>
-                  <ul>
-                    <li>Inspección de Trabajo: El Ministerio del Trabajo es responsable de supervisar el cumplimiento de las normas de seguridad y salud en el trabajo. Las inspecciones regulares y las auditorías ayudan a identificar y corregir deficiencias en las condiciones laborales.</li>
-                    <li>Sanciones: Los empleadores que incumplan las normas de seguridad y salud en el trabajo pueden ser sancionados. Las sanciones pueden incluir multas, cierres temporales de las instalaciones y otras medidas correctivas. Esto asegura que los empleadores tomen en serio sus responsabilidades y mantengan un entorno laboral seguro.</li>
-                  </ul>
+                    <ul>
+                        <li>Inspección de Trabajo: El Ministerio del Trabajo es responsable de supervisar el
+                            cumplimiento de las normas de seguridad y salud en el trabajo. Las inspecciones regulares y
+                            las auditorías ayudan a identificar y corregir deficiencias en las condiciones laborales.
+                        </li>
+                        <li>Sanciones: Los empleadores que incumplan las normas de seguridad y salud en el trabajo
+                            pueden ser sancionados. Las sanciones pueden incluir multas, cierres temporales de las
+                            instalaciones y otras medidas correctivas. Esto asegura que los empleadores tomen en serio
+                            sus responsabilidades y mantengan un entorno laboral seguro.</li>
+                    </ul>
                 </li>
-              </ul>
-              
+            </ul>
+
         </div>
     </section>
 
@@ -461,8 +586,9 @@
             <a href="https://www.instagram.com/fundacionjusticialaboral/" target="_blank" title="Síguenos en Instagram">
                 <i class="fab fa-instagram"></i>
             </a>
-            
+
         </div>
     </footer>
 </body>
+
 </html>
